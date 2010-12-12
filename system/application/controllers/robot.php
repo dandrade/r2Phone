@@ -35,10 +35,22 @@
 		
 		function home()
 		{
-			$this->validar_sesion();
+			$this->header(true);
 			$this->load->view("ui/home");
 		}
 		
+		function header($validate = false)
+		{
+			if($validate == true)
+			{
+				$this->validar_sesion();
+			}
+			$this->load->view("ui/header");
+		}
+		
+		/*
+			Funciones 
+		*/
 		function sanitize($s = "")
 		{
 			$s = $this->input->xss_clean($s);
@@ -58,5 +70,6 @@
 				redirect("/robot/");	
 			}
 		}
+		
 	}
 ?>

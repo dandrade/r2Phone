@@ -1,4 +1,4 @@
-jQuery.noConflict();
+//jQuery.noConflict();
 
 window.onscroll = function()
 {
